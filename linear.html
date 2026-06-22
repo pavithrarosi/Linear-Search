@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Linear Search</title>
+
+<style>
+body{
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg,#6a11cb,#2575fc);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+    width:400px;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter: blur(15px);
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 0 25px rgba(255,255,255,0.4);
+    text-align:center;
+    color:white;
+}
+
+h2{
+    color:#FFD700;
+}
+
+input{
+    width:90%;
+    padding:12px;
+    margin:10px;
+    border:none;
+    border-radius:25px;
+    outline:none;
+    font-size:16px;
+}
+
+button{
+    background:linear-gradient(to right,#ff512f,#dd2476);
+    color:white;
+    border:none;
+    padding:12px 30px;
+    border-radius:25px;
+    cursor:pointer;
+    font-size:16px;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.1);
+}
+
+#result{
+    margin-top:15px;
+    font-size:18px;
+    color:#00ff99;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h2>🔍 Linear Search</h2>
+
+<input type="text" id="arrayInput" placeholder="Enter numbers (10,20,30,40)">
+<input type="number" id="searchValue" placeholder="Enter value">
+
+<br>
+<button onclick="linearSearch()">Search</button>
+
+<p id="result"></p>
+</div>
+
+<script>
+function linearSearch()
+{
+    let arr=document.getElementById("arrayInput").value.split(",").map(Number);
+    let value=Number(document.getElementById("searchValue").value);
+
+    let pos=-1;
+
+    for(let i=0;i<arr.length;i++)
+    {
+        if(arr[i]===value)
+        {
+            pos=i;
+            break;
+        }
+    }
+
+    if(pos!=-1)
+        document.getElementById("result").innerHTML="✅ Element found at index "+pos;
+    else
+        document.getElementById("result").innerHTML="❌ Element not found";
+}
+</script>
+
+</body>
+</h
